@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April Fool Prank</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        h2 {
+            font-size: 36px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            animation: bounce 1.5s infinite;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        button {
+            padding: 14px 28px;
+            font-size: 22px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.3);
+        }
+        .yes {
+            background-color: #00adb5;
+            color: white;
+            position: absolute;
+            font-weight: bold;
+        }
+        .no {
+            background-color: #ff2e63;
+            color: white;
+            font-weight: bold;
+        }
+        .no:hover {
+            background-color: #d81e5b;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        .message {
+            display: none;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .message img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: spin 2s infinite linear;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Are you smart?</h2>
+    <div class="buttons">
+        <button class="yes" id="yes">Yes</button>
+        <button class="no" id="no">No</button>
+    </div>
+    <div class="message" id="message">🎉 April Fool! Badarniii 😂
+        <br> You are smarter than you think! Keep it up! 💪
+        <img src="images/a52aab732dab0cae0e3036def3d8d2b2.jpg" alt="">
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yes");
+        const noBtn = document.getElementById("no");
+        const message = document.getElementById("message");
+
+        yesBtn.addEventListener("mouseover", function() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            yesBtn.style.left = `${x}px`;
+            yesBtn.style.top = `${y}px`;
+        });
+
+        noBtn.addEventListener("click", function() {
+            message.style.display = "block";
+        });
+    </script>
+</body>
+</html>
